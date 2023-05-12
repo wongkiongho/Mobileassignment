@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.home -> replaceFragment(HomeFragment())
                 R.id.donation -> replaceFragment(ProfileFragment())
-                R.id.profile -> replaceFragment(HistoryFragment())
+                R.id.campaign -> replaceFragment(CampaignFragment())
                 R.id.profile -> replaceFragment(ProfileFragment())
 
                 else ->{

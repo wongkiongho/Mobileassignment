@@ -6,4 +6,5 @@
     <string name="nav_home">Home</string>
     <string name="nav_history">History</string>
     <string name="nav_profile">Profile</string>
+    <string name="nav_campaign">Campaign</string>
 </resources>
