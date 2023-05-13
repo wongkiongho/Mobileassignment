@@ -1,16 +1,19 @@
 package my.edu.tarc.mobileapplicationassignment
 
 import android.app.Activity
+import android.app.AlertDialog
+import android.app.DatePickerDialog
+import android.content.DialogInterface
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import java.util.Calendar
-import android.app.DatePickerDialog
-import android.content.Intent
-import android.net.Uri
 import android.widget.*
+import androidx.fragment.app.Fragment
+import java.util.*
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -42,20 +45,20 @@ class CampaignFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_campaign, container, false)
 
-        // Get the "Select Date" button and "textView7"
+
         val selectDateButton = view.findViewById<Button>(R.id.datebtn)
         val textView7 = view.findViewById<TextView>(R.id.textView7)
 
 
-        // Get the "Select Image" button
+
         val selectImageButton = view.findViewById<Button>(R.id.upload_image)
 
         selectImageButton.setOnClickListener {
-            // Create an Intent to pick an image from the gallery
+
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = "image/*"
 
-            // Start the Intent and wait for a result
+
             startActivityForResult(intent, PICK_IMAGE_REQUEST)
         }
 
@@ -71,7 +74,7 @@ class CampaignFragment : Fragment() {
             val datePickerDialog = DatePickerDialog(
                 requireContext(),
                 { view, year, month, dayOfMonth ->
-                    // Do something with the selected date
+
                     val selectedDate = "${dayOfMonth}/${month + 1}/${year}"
                     textView7.text = selectedDate // set the selected date to the textView7
                 },
@@ -105,7 +108,22 @@ class CampaignFragment : Fragment() {
             }
         }
 
+        val nextbutton = view.findViewById<Button>(R.id.nextpage)
 
+        nextbutton.setOnClickListener(View.OnClickListener {
+            val builder: AlertDialog.Builder = AlertDialog.Builder(activity)
+            builder.setTitle("Confirmation")
+                .setMessage("Are you sure you want to proceed?")
+                .setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, which ->
+
+                })
+                .setNegativeButton(
+                    "No",
+                    DialogInterface.OnClickListener { dialog, which ->
+                        dialog.dismiss()
+                    })
+                .show()
+        })
 
         return view
     }

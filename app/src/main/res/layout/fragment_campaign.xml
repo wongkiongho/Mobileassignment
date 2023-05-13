@@ -21,14 +21,14 @@
         <!-- TODO: Update blank fragment layout -->
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/campaignTextLabel"
             android:layout_width="312dp"
             android:layout_height="25dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="100dp"
             android:layout_marginEnd="65dp"
             android:layout_marginBottom="662dp"
-            android:text="Campaign Title (Required)"
+            android:text="@string/campaign_title_required"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,17 +37,17 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/shortDescLabel"
             android:layout_width="312dp"
             android:layout_height="25dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="65dp"
-            android:text="Short Description"
+            android:text="@string/short_description"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            app:layout_constraintTop_toBottomOf="@+id/campaignText" />
 
         <TextView
             android:id="@+id/category_label"
@@ -56,7 +56,7 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="65dp"
-            android:text="Campaign Category (Required)"
+            android:text="@string/campaign_category_required"
             android:textSize="20sp"
             android:labelFor="@+id/category_spinner"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +70,7 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="65dp"
-            android:text="Amount of Required Funds (MYR)"
+            android:text="@string/amount_of_required_funds_myr"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +83,7 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="65dp"
-            android:text="Campaign Feature Image (Required)"
+            android:text="@string/campaign_feature_image_required"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -96,11 +96,11 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="65dp"
-            android:text="Campaign End Date"
+            android:text="@string/campaign_end_date"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+            app:layout_constraintTop_toBottomOf="@+id/shortDesc" />
 
         <TextView
             android:id="@+id/textView7"
@@ -115,10 +115,9 @@
         <TextView
             android:id="@+id/textView15"
             android:layout_width="268dp"
-            android:layout_height="52dp"
+            android:layout_height="40dp"
             android:layout_marginTop="15dp"
             android:background="#D9D9D9"
-            android:text="TextView"
             app:layout_constraintStart_toStartOf="@+id/textView13"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -128,7 +127,7 @@
             android:layout_height="55dp"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="47dp"
-            android:text="Choose"
+            android:text="@string/choose"
             app:layout_constraintBottom_toBottomOf="@+id/textView7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.25"
@@ -141,27 +140,27 @@
             android:layout_height="60dp"
             android:layout_marginStart="11dp"
             android:layout_marginEnd="52dp"
-            android:text="Select"
+            android:text="@string/select"
             app:layout_constraintBottom_toBottomOf="@+id/textView15"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView15"
             app:layout_constraintTop_toTopOf="@+id/textView15" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/campaignText"
+            android:layout_width="320dp"
+            android:layout_height="60dp"
             android:layout_marginTop="15dp"
             android:ems="10"
+            android:hint="@string/campaign_title"
             android:inputType="textPersonName"
-            android:text="Campaign Title"
-            app:layout_constraintStart_toStartOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintStart_toStartOf="@+id/campaignTextLabel"
+            app:layout_constraintTop_toBottomOf="@+id/campaignTextLabel" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/shortDesc"
+            android:layout_width="320dp"
+            android:layout_height="60dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="171dp"
             android:layout_marginBottom="30dp"
@@ -170,8 +169,9 @@
             android:inputType="textPersonName"
             app:layout_constraintBottom_toTopOf="@+id/textView8"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/textView4"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/shortDescLabel"
+            app:layout_constraintTop_toBottomOf="@+id/shortDescLabel" />
 
         <Spinner
             android:id="@+id/category_spinner"
@@ -188,7 +188,7 @@
             android:layout_marginTop="13dp"
             android:layout_marginEnd="115dp"
             android:layout_marginBottom="30dp"
-            android:hint="Enter Amount"
+            android:hint="@string/enter_amount"
             android:inputType="number"
             app:layout_constraintBottom_toTopOf="@+id/textView13"
             app:layout_constraintEnd_toEndOf="parent"
@@ -198,13 +198,13 @@
             tools:layout_conversion_absoluteWidth="325dp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/nextpage"
             android:layout_width="110dp"
             android:layout_height="54dp"
             android:layout_marginStart="163dp"
             android:layout_marginTop="86dp"
             android:layout_marginEnd="163dp"
-            android:text="Next"
+            android:text="@string/next"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
