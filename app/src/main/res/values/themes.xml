@@ -13,4 +13,6 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="Theme.Contact.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.Contact.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 </resources>
