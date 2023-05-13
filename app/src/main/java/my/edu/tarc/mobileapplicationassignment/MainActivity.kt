@@ -34,26 +34,7 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-        data class User(val name: String, val email: String)
 
-        val button = findViewById<Button>(R.id.buttonLogout)
-
-        button.setOnClickListener {
-            val name = "John Doe"
-            val email = "johndoe@example.com"
-            val user = User(name, email)
-
-            val database = FirebaseDatabase.getInstance()
-            val usersRef = database.getReference("users")
-
-            usersRef.child("user1").setValue(user)
-                .addOnSuccessListener {
-                    Toast.makeText(this, "Data saved to Firebase", Toast.LENGTH_SHORT).show()
-                }
-                .addOnFailureListener {
-                    Toast.makeText(this, "Error: ${it.message}", Toast.LENGTH_SHORT).show()
-                }
-        }
 
     }
 
