@@ -87,7 +87,7 @@ class CampaignFragment : Fragment() {
             datePickerDialog.show()
         }
 
-        val categories = listOf("Category 1", "Category 2", "Category 3", "Category 4")
+        val categories = listOf("Animal Welfare", "Disaster Relief", "Education", "Environmental", "Medical Relief")
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, categories)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         val categorySpinner = view.findViewById<Spinner>(R.id.category_spinner)
@@ -95,13 +95,13 @@ class CampaignFragment : Fragment() {
 
         categorySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                // Handle the user selection
+
                 val selectedCategory = categories[position]
                 Toast.makeText(requireContext(), "You selected $selectedCategory", Toast.LENGTH_SHORT).show()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                // Do nothing
+
             }
         }
 
