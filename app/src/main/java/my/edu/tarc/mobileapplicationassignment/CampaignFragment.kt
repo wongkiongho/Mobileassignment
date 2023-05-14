@@ -111,6 +111,14 @@ class CampaignFragment : Fragment() {
         val nextbutton = view.findViewById<Button>(R.id.nextpage)
 
         nextbutton.setOnClickListener(View.OnClickListener {
+            val title = view.findViewById<EditText>(R.id.titleText)
+            val emailEditText = view.findViewById<EditText>(R.id.campaignDesc)
+            val phoneEditText = view.findViewById<EditText>(R.id.phoneEditText)
+
+            val name = nameEditText.text.toString().trim()
+            val email = emailEditText.text.toString().trim()
+            val phone = phoneEditText.text.toString().trim()
+
             val builder: AlertDialog.Builder = AlertDialog.Builder(activity)
             builder.setTitle("Confirmation")
                 .setMessage("Are you sure you want to proceed?")
