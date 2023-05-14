@@ -111,26 +111,29 @@ class CampaignFragment : Fragment() {
         val nextbutton = view.findViewById<Button>(R.id.nextpage)
 
         nextbutton.setOnClickListener(View.OnClickListener {
-            val title = view.findViewById<EditText>(R.id.titleText)
-            val emailEditText = view.findViewById<EditText>(R.id.campaignDesc)
-            val phoneEditText = view.findViewById<EditText>(R.id.phoneEditText)
+            val titleText = view.findViewById<EditText>(R.id.titleText)
+            val descText = view.findViewById<EditText>(R.id.shortDesc)
 
-            val name = nameEditText.text.toString().trim()
-            val email = emailEditText.text.toString().trim()
-            val phone = phoneEditText.text.toString().trim()
+            val title = titleText.text.toString().trim()
+            val desc = descText.text.toString().trim()
 
-            val builder: AlertDialog.Builder = AlertDialog.Builder(activity)
-            builder.setTitle("Confirmation")
-                .setMessage("Are you sure you want to proceed?")
-                .setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, which ->
+            if (title.isEmpty() || desc.isEmpty()) {
+                // Show an error message to the user and don't allow them to proceed
+                Toast.makeText(requireContext(), "Please fill in all required fields.", Toast.LENGTH_SHORT).show()
+            } else {
+                val builder: AlertDialog.Builder = AlertDialog.Builder(activity)
+                builder.setTitle("Confirmation")
+                    .setMessage("Are you sure you want to proceed?")
+                    .setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, which ->
 
-                })
-                .setNegativeButton(
-                    "No",
-                    DialogInterface.OnClickListener { dialog, which ->
-                        dialog.dismiss()
                     })
-                .show()
+                    .setNegativeButton(
+                        "No",
+                        DialogInterface.OnClickListener { dialog, which ->
+                            dialog.dismiss()
+                        })
+                    .show()
+            }
         })
 
         return view
